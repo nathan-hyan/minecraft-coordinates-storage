@@ -1,0 +1,106 @@
+{
+  "locations": [
+    {
+      "dimension": "nether",
+      "locationName": "Bastion Remnant",
+      "x": 197,
+      "y": 50,
+      "z": -583,
+      "id": "8088",
+      "notes": []
+    },
+    {
+      "dimension": "end",
+      "locationName": "enderman spawn",
+      "x": 282,
+      "z": -340,
+      "id": "1713",
+      "notes": [
+        "This is my house",
+        "I like it"
+      ]
+    },
+    {
+      "dimension": "end",
+      "locationName": "elytras",
+      "x": 82432,
+      "y": 15,
+      "z": -340,
+      "id": "8ca7",
+      "notes": [
+        "I like it"
+      ]
+    },
+    {
+      "dimension": "nether",
+      "locationName": "nether fortress",
+      "x": 28232,
+      "z": -30,
+      "id": "6588",
+      "notes": [
+        "asd",
+        "This is working now?",
+        "Oh Shieeet"
+      ]
+    },
+    {
+      "dimension": "end",
+      "locationName": "enderman spawn",
+      "x": 282,
+      "z": -340,
+      "id": "233e",
+      "notes": [
+        "This is my house",
+        "I like it"
+      ]
+    },
+    {
+      "dimension": "overworld",
+      "locationName": "Algo bonito que encontré",
+      "x": 342,
+      "y": 90,
+      "z": 16,
+      "id": "b370",
+      "notes": []
+    },
+    {
+      "id": "37a7",
+      "locationName": "My house!",
+      "x": "12",
+      "y": "~",
+      "z": "543",
+      "dimension": "overworld",
+      "structure": "none",
+      "notes": [
+        "This is my house",
+        "I like it"
+      ]
+    },
+    {
+      "id": "404a",
+      "locationName": "Mira como anda esto wachoooo",
+      "x": "134",
+      "y": "~",
+      "z": "231",
+      "dimension": "nether",
+      "structure": "monument",
+      "notes": [
+        "This is my house",
+        "I like it"
+      ]
+    },
+    {
+      "id": "9fa7",
+      "locationName": "This one has a structure",
+      "x": "132",
+      "y": "~",
+      "z": "54",
+      "dimension": "overworld",
+      "structure": "monument",
+      "notes": [
+        "This is my house",
+        "I like it"
+      ]
+    }
+  ]
+}
