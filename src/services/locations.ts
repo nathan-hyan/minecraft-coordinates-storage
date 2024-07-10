@@ -1,6 +1,20 @@
 import { redirect } from "react-router-dom";
 import { LoaderType } from "../globals/types";
 
+export const getLocation = async () => {
+  return await fetch("http://localhost:3000/locations").then((res) =>
+    res.json()
+  );
+};
+
+export const getSingleLocation = async (id?: string) => {
+  if (!id) throw new Error("No id provided");
+
+  return await fetch(`http://localhost:3000/locations/${id}`).then((res) =>
+    res.json()
+  );
+};
+
 export const saveLocation = async ({ request }: { request: Request }) => {
   const data = await request.formData();
   const body = {
@@ -36,6 +50,16 @@ export const editLocation = async (request: Request, locationId?: string) => {
   await fetch(`http://localhost:3000/locations/${locationId}`, {
     method: "PUT",
     body: JSON.stringify(body),
+  });
+
+  return redirect("/");
+};
+
+export const deleteLocation = async (locationId?: string) => {
+  if (!locationId) throw new Error("No id provided");
+
+  await fetch(`http://localhost:3000/locations/${locationId}`, {
+    method: "DELETE",
   });
 
   return redirect("/");
@@ -77,18 +101,4 @@ export const deleteNote = async (id?: string, noteToDelete?: string) => {
   });
 
   return redirect(`/details/${id}`);
-};
-
-export const getLocation = async () => {
-  return await fetch("http://localhost:3000/locations").then((res) =>
-    res.json()
-  );
-};
-
-export const getSingleLocation = async (id?: string) => {
-  if (!id) throw new Error("No id provided");
-
-  return await fetch(`http://localhost:3000/locations/${id}`).then((res) =>
-    res.json()
-  );
 };

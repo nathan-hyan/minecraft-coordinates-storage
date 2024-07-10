@@ -14,6 +14,7 @@ import Main from "./layouts/Main/Main";
 import { Landing, Create, Details } from "./screens";
 import {
   addNote,
+  deleteLocation,
   deleteNote,
   editLocation,
   getLocation,
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
             element: <Details />,
             loader: ({ params }) => getSingleLocation(params.locationId),
             children: [
+              {
+                path: "deleteLocation",
+                action: ({ params }) => deleteLocation(params.locationId),
+              },
               {
                 path: "delete/:note",
                 action: ({ params }) =>

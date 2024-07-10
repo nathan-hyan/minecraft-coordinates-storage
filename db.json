@@ -7,7 +7,9 @@
       "y": 50,
       "z": -583,
       "id": "8088",
-      "notes": []
+      "notes": [
+        "Todavia no se puede editar la nota"
+      ]
     },
     {
       "dimension": "end",
@@ -28,18 +30,6 @@
       "dimension": "end",
       "structure": "stronghold",
       "id": "8ca7"
-    },
-    {
-      "dimension": "nether",
-      "locationName": "nether fortress",
-      "x": 28232,
-      "z": -30,
-      "id": "6588",
-      "notes": [
-        "asd",
-        "This is working now?",
-        "Oh Shieeet"
-      ]
     },
     {
       "dimension": "end",
@@ -111,15 +101,6 @@
       "notes": [
         "Ahora no se tiene que romper"
       ]
-    },
-    {
-      "id": "2786",
-      "locationName": "This has to create",
-      "x": "123",
-      "y": "456",
-      "z": "789",
-      "dimension": "nether",
-      "structure": "mansion"
     }
   ]
 }
