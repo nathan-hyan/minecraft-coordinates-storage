@@ -21,15 +21,13 @@
       ]
     },
     {
+      "locationName": "elaitraasss",
+      "x": "82432",
+      "y": "15",
+      "z": "-340",
       "dimension": "end",
-      "locationName": "elytras",
-      "x": 82432,
-      "y": 15,
-      "z": -340,
-      "id": "8ca7",
-      "notes": [
-        "I like it"
-      ]
+      "structure": "stronghold",
+      "id": "8ca7"
     },
     {
       "dimension": "nether",
@@ -55,13 +53,13 @@
       ]
     },
     {
-      "dimension": "overworld",
       "locationName": "Algo bonito que encontré",
-      "x": 342,
-      "y": 90,
-      "z": 16,
-      "id": "b370",
-      "notes": []
+      "x": "342",
+      "y": "",
+      "z": "16",
+      "dimension": "overworld",
+      "structure": "none",
+      "id": "b370"
     },
     {
       "id": "37a7",
@@ -101,6 +99,27 @@
         "This is my house",
         "I like it"
       ]
+    },
+    {
+      "id": "4aa9",
+      "locationName": "ESTO ESTA EDITAAADOOOO pero no, seguro crea uno nuevo",
+      "x": "197",
+      "y": "~",
+      "z": "-583",
+      "dimension": "nether",
+      "structure": "none",
+      "notes": [
+        "Ahora no se tiene que romper"
+      ]
+    },
+    {
+      "id": "2786",
+      "locationName": "This has to create",
+      "x": "123",
+      "y": "456",
+      "z": "789",
+      "dimension": "nether",
+      "structure": "mansion"
     }
   ]
 }

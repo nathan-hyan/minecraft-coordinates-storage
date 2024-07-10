@@ -20,8 +20,28 @@ export const saveLocation = async ({ request }: { request: Request }) => {
   return redirect("/");
 };
 
+export const editLocation = async (request: Request, locationId?: string) => {
+  if (!locationId) throw new Error("No id provided");
+
+  const data = await request.formData();
+  const body = {
+    locationName: data.get("locationName"),
+    x: data.get("x"),
+    y: data.get("disableY") ? "~" : data.get("y") ?? "~",
+    z: data.get("z"),
+    dimension: data.get("dimension"),
+    structure: data.get("structure"),
+  };
+
+  await fetch(`http://localhost:3000/locations/${locationId}`, {
+    method: "PUT",
+    body: JSON.stringify(body),
+  });
+
+  return redirect("/");
+};
+
 export const addNote = async (id?: string, noteToAdd?: FormData) => {
-  console.log("Called!");
   if (!id) throw new Error("No id provided");
   if (!noteToAdd) throw new Error("No note provided");
 
@@ -30,7 +50,11 @@ export const addNote = async (id?: string, noteToAdd?: FormData) => {
 
   if (!newNote) throw new Error("No note provided");
 
-  newBody.notes.push(String(newNote));
+  try {
+    newBody.notes.push(String(newNote));
+  } catch (e) {
+    newBody.notes = [String(newNote)];
+  }
 
   await fetch(`http://localhost:3000/locations/${id}`, {
     method: "PUT",

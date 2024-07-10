@@ -1,9 +1,10 @@
-import { PlusOneRounded } from "@mui/icons-material";
+import { Edit, PlusOneRounded } from "@mui/icons-material";
 import { AppBar, Button, Toolbar, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function NavigationBar() {
   const push = useNavigate();
+  const { locationId } = useParams();
 
   return (
     <AppBar>
@@ -17,6 +18,16 @@ function NavigationBar() {
           Minecraft Coordinate Storage
         </Typography>
 
+        {locationId && (
+          <Button
+            variant="contained"
+            startIcon={<Edit />}
+            sx={{ mr: 2 }}
+            onClick={() => push(`/edit/${locationId}`)}
+          >
+            Edit Location
+          </Button>
+        )}
         <Button
           variant="contained"
           startIcon={<PlusOneRounded />}

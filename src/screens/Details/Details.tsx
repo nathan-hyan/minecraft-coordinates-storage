@@ -31,6 +31,8 @@ function Details() {
     toggleDeletion();
   };
 
+  const doesNotesExist = data.notes && data.notes.length;
+
   return (
     <>
       <AddNote open={addModalOpen} handleClose={toggleAdd} />
@@ -71,30 +73,34 @@ function Details() {
           >
             Add Note
           </Button>
-          <Typography variant="body1">Notes: </Typography>
+          {doesNotesExist ? (
+            <Typography variant="body1">Notes: </Typography>
+          ) : null}
         </Grid>
         <Grid item container spacing={2}>
-          {data.notes.map((note) => (
-            <Grid item key={note}>
-              <Card>
-                <CardContent>
-                  <Typography variant="body1">{note}</Typography>
-                </CardContent>
+          {doesNotesExist
+            ? data.notes.map((note) => (
+                <Grid item key={note}>
+                  <Card>
+                    <CardContent>
+                      <Typography variant="body1">{note}</Typography>
+                    </CardContent>
 
-                <CardActions disableSpacing>
-                  <IconButton aria-label="add to favorites">
-                    <Edit />
-                  </IconButton>
-                  <IconButton
-                    aria-label="share"
-                    onClick={() => selectNote(note)}
-                  >
-                    <Delete />
-                  </IconButton>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
+                    <CardActions disableSpacing>
+                      <IconButton aria-label="add to favorites">
+                        <Edit />
+                      </IconButton>
+                      <IconButton
+                        aria-label="share"
+                        onClick={() => selectNote(note)}
+                      >
+                        <Delete />
+                      </IconButton>
+                    </CardActions>
+                  </Card>
+                </Grid>
+              ))
+            : null}
         </Grid>
       </Grid>
     </>

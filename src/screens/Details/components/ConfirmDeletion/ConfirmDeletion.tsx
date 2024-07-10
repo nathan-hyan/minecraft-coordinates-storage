@@ -16,7 +16,7 @@ interface Props {
 }
 
 function ConfirmDeletion({ open, currentNote, handleClose }: Props) {
-  const { id } = useParams();
+  const { locationId } = useParams();
 
   return (
     <Dialog
@@ -33,7 +33,10 @@ function ConfirmDeletion({ open, currentNote, handleClose }: Props) {
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose}>Cancel</Button>
-        <Form action={`/details/${id}/delete/${currentNote}`} method="delete">
+        <Form
+          action={`/details/${locationId}/delete/${currentNote}`}
+          method="delete"
+        >
           <Button onClick={handleClose} type="submit" color="error">
             Delete
           </Button>

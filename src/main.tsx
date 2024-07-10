@@ -15,6 +15,7 @@ import { Landing, Create, Details } from "./screens";
 import {
   addNote,
   deleteNote,
+  editLocation,
   getLocation,
   getSingleLocation,
   saveLocation,
@@ -41,18 +42,19 @@ const router = createBrowserRouter([
         element: <Outlet />,
         children: [
           {
-            path: ":id",
+            path: ":locationId",
             element: <Details />,
-            loader: ({ params }) => getSingleLocation(params.id),
+            loader: ({ params }) => getSingleLocation(params.locationId),
             children: [
               {
                 path: "delete/:note",
-                action: ({ params }) => deleteNote(params.id, params.note),
+                action: ({ params }) =>
+                  deleteNote(params.locationId, params.note),
               },
               {
                 path: "addNote",
                 action: async ({ params, request }) =>
-                  addNote(params.id, await request.formData()),
+                  addNote(params.locationId, await request.formData()),
               },
             ],
           },
@@ -62,6 +64,13 @@ const router = createBrowserRouter([
         path: "create",
         element: <Create />,
         action: saveLocation,
+      },
+      {
+        path: "edit/:locationId",
+        element: <Create editMode />,
+        loader: ({ params }) => getSingleLocation(params.locationId),
+        action: ({ request, params }) =>
+          editLocation(request, params.locationId),
       },
     ],
   },

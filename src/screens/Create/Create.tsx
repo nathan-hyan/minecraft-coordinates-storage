@@ -1,11 +1,22 @@
-import { Box, Button, Divider, Grid, MenuItem, Stack } from "@mui/material";
+import {
+  Box,
+  Button,
+  Divider,
+  Grid,
+  MenuItem,
+  Stack,
+  Typography,
+} from "@mui/material";
 import { AVAILABLE_DIMENSIONS, AVAILABLE_STRUCTURES } from "./constants";
 import Input from "../../components/Input/Input";
 import { ToggleInput } from "../../components";
-import { Form, useNavigate } from "react-router-dom";
+import { Form, useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
+import { LoaderType } from "../../globals/types";
 
-function Create() {
+function Create({ editMode }: { editMode?: boolean }) {
+  const { locationId } = useParams();
+  const data = useLoaderData() as LoaderType;
   const [disableY, setDisableY] = useState(false);
   const push = useNavigate();
 
@@ -17,8 +28,18 @@ function Create() {
     push("/");
   };
 
+  const formProps = editMode
+    ? { method: "put" as const, action: `/edit/${locationId}` }
+    : { method: "post" as const, action: "/create" };
+
   return (
-    <Form method="post" action="/create">
+    <Form method={formProps.method} action={formProps.action}>
+      {editMode && (
+        <Typography variant="h4" mb={3}>
+          Editing: {data.locationName}
+        </Typography>
+      )}
+
       <Grid
         container
         spacing={2}
@@ -30,6 +51,7 @@ function Create() {
           name="locationName"
           label="Location name"
           variant="outlined"
+          defaultValue={data?.locationName}
           required
           fullWidth
         />
@@ -38,7 +60,7 @@ function Create() {
           name="dimension"
           select
           label="Dimension"
-          defaultValue="overworld"
+          defaultValue={data?.dimension ?? "overworld"}
           required
           fullWidth
         >
@@ -53,7 +75,7 @@ function Create() {
           name="structure"
           select
           label="Structure"
-          defaultValue="none"
+          defaultValue={data?.structure ?? "none"}
           required
           fullWidth
         >
@@ -75,6 +97,7 @@ function Create() {
               name="x"
               label="X Coordinate"
               type="number"
+              defaultValue={data?.x}
               variant="outlined"
               required
             />
@@ -85,6 +108,7 @@ function Create() {
                 name="y"
                 label="Y Coordinate"
                 variant="outlined"
+                defaultValue={data?.y}
                 type="number"
               />
               <ToggleInput
@@ -99,6 +123,7 @@ function Create() {
               label="Z Coordinate"
               type="number"
               variant="outlined"
+              defaultValue={data?.z}
               required
             />
           </Stack>

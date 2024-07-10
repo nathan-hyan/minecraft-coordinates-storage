@@ -16,7 +16,7 @@ interface Props {
 }
 
 function AddNote({ open, handleClose }: Props) {
-  const { id } = useParams();
+  const { locationId } = useParams();
 
   return (
     <Dialog
@@ -25,8 +25,8 @@ function AddNote({ open, handleClose }: Props) {
       onClose={handleClose}
       aria-describedby="alert-dialog-delete-note"
     >
-      <Form action={`/details/${id}/addNote`} method="put">
-        <DialogTitle>{"Are you sure?"}</DialogTitle>
+      <Form action={`/details/${locationId}/addNote`} method="put">
+        <DialogTitle>Enter the note</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
             <Input name="note" type="text" placeholder="Note" />
