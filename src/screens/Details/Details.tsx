@@ -1,47 +1,18 @@
 import { useLoaderData } from "react-router-dom";
 import { LoaderType } from "../../globals/types";
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Chip,
-  Grid,
-  IconButton,
-  Typography,
-} from "@mui/material";
+import { Chip, Grid, Typography } from "@mui/material";
 import {
   dimensionCoverImageMap,
   structureMap,
 } from "../../components/LocationDisplay/utils";
-import { Delete, Edit, PlusOneRounded } from "@mui/icons-material";
-import { useState } from "react";
-import { AddNote, ConfirmDeletion } from "./components";
+
+import { NotesContainer } from "./components";
 
 function Details() {
   const data = useLoaderData() as LoaderType;
-  const [addModalOpen, setAddModalOpen] = useState(false);
-  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
-  const [noteToDelete, setNoteToDelete] = useState<string | null>(null);
-
-  const toggleAdd = () => setAddModalOpen((prevState) => !prevState);
-  const toggleDeletion = () => setDeleteModalOpen((prevState) => !prevState);
-  const selectNote = (note: string) => {
-    setNoteToDelete(note);
-    toggleDeletion();
-  };
-
-  const doesNotesExist = data.notes && data.notes.length;
 
   return (
     <>
-      <AddNote open={addModalOpen} handleClose={toggleAdd} />
-      <ConfirmDeletion
-        open={deleteModalOpen}
-        handleClose={toggleDeletion}
-        currentNote={noteToDelete}
-      />
-
       <Grid container spacing={2}>
         <Grid item xs={4}>
           <img
@@ -50,6 +21,7 @@ function Details() {
             width={"100%"}
           />
         </Grid>
+
         <Grid item xs={8}>
           <Typography variant="h3">{data.locationName}</Typography>
           {data.structure ? (
@@ -64,44 +36,8 @@ function Details() {
             Z: {data.z}
           </Typography>
         </Grid>
-        <Grid item xs={12}>
-          <Button
-            variant="contained"
-            startIcon={<PlusOneRounded />}
-            sx={{ mb: 2 }}
-            onClick={toggleAdd}
-          >
-            Add Note
-          </Button>
-          {doesNotesExist ? (
-            <Typography variant="body1">Notes: </Typography>
-          ) : null}
-        </Grid>
-        <Grid item container spacing={2}>
-          {doesNotesExist
-            ? data.notes.map((note) => (
-                <Grid item key={note}>
-                  <Card>
-                    <CardContent>
-                      <Typography variant="body1">{note}</Typography>
-                    </CardContent>
 
-                    <CardActions disableSpacing>
-                      <IconButton aria-label="add to favorites">
-                        <Edit />
-                      </IconButton>
-                      <IconButton
-                        aria-label="share"
-                        onClick={() => selectNote(note)}
-                      >
-                        <Delete />
-                      </IconButton>
-                    </CardActions>
-                  </Card>
-                </Grid>
-              ))
-            : null}
-        </Grid>
+        <NotesContainer notes={data.notes} />
       </Grid>
     </>
   );

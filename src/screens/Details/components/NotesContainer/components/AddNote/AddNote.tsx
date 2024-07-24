@@ -8,7 +8,7 @@ import {
   Input,
 } from "@mui/material";
 import { Form, useParams } from "react-router-dom";
-import { Transition } from "../../../../components/Transition/Transition";
+import { Transition } from "../../../../../../components";
 
 interface Props {
   open: boolean;
@@ -27,11 +27,13 @@ function AddNote({ open, handleClose }: Props) {
     >
       <Form action={`/details/${locationId}/addNote`} method="put">
         <DialogTitle>Enter the note</DialogTitle>
+
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
             <Input name="note" type="text" placeholder="Note" />
           </DialogContentText>
         </DialogContent>
+
         <DialogActions>
           <Button color="secondary" onClick={handleClose}>
             Cancel

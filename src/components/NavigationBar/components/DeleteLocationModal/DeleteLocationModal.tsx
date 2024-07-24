@@ -7,7 +7,7 @@ import {
   Button,
 } from "@mui/material";
 import { Form, useParams } from "react-router-dom";
-import { Transition } from "../../../Transition/Transition";
+import { Transition } from "../../..";
 
 interface Props {
   open: boolean;

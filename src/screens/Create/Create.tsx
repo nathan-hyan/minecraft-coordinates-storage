@@ -7,7 +7,11 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import { AVAILABLE_DIMENSIONS, AVAILABLE_STRUCTURES } from "./constants";
+import {
+  AVAILABLE_DIMENSIONS,
+  AVAILABLE_STRUCTURES,
+  getFormProps,
+} from "./constants";
 import Input from "../../components/Input/Input";
 import { ToggleInput } from "../../components";
 import { Form, useLoaderData, useNavigate, useParams } from "react-router-dom";
@@ -15,9 +19,10 @@ import { useState } from "react";
 import { LoaderType } from "../../globals/types";
 
 function Create({ editMode }: { editMode?: boolean }) {
+  const [disableY, setDisableY] = useState(false);
+
   const { locationId } = useParams();
   const data = useLoaderData() as LoaderType;
-  const [disableY, setDisableY] = useState(false);
   const push = useNavigate();
 
   const handleToggleSetDisableY = () => {
@@ -28,9 +33,7 @@ function Create({ editMode }: { editMode?: boolean }) {
     push("/");
   };
 
-  const formProps = editMode
-    ? { method: "put" as const, action: `/edit/${locationId}` }
-    : { method: "post" as const, action: "/create" };
+  const formProps = getFormProps(editMode, locationId);
 
   return (
     <Form method={formProps.method} action={formProps.action}>
@@ -128,7 +131,9 @@ function Create({ editMode }: { editMode?: boolean }) {
             />
           </Stack>
         </Grid>
+
         <Box flexBasis={1} height={"100%"} />
+
         <Stack direction={"row"} spacing={2} justifyContent={"space-between"}>
           <Button color="error" onClick={returnToLanding}>
             Cancel

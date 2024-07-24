@@ -1,105 +1,15 @@
 {
   "locations": [
     {
-      "dimension": "nether",
-      "locationName": "Bastion Remnant",
-      "x": 197,
-      "y": 50,
-      "z": -583,
-      "id": "8088",
-      "notes": [
-        "Todavia no se puede editar la nota"
-      ]
-    },
-    {
-      "dimension": "end",
-      "locationName": "enderman spawn",
-      "x": 282,
-      "z": -340,
-      "id": "1713",
-      "notes": [
-        "This is my house",
-        "I like it"
-      ]
-    },
-    {
-      "locationName": "elaitraasss",
-      "x": "82432",
-      "y": "15",
-      "z": "-340",
+      "locationName": "Se puede Editar",
+      "x": "123",
+      "y": "123",
+      "z": "123",
       "dimension": "end",
       "structure": "stronghold",
-      "id": "8ca7"
-    },
-    {
-      "dimension": "end",
-      "locationName": "enderman spawn",
-      "x": 282,
-      "z": -340,
-      "id": "233e",
+      "id": "1b84",
       "notes": [
-        "This is my house",
-        "I like it"
-      ]
-    },
-    {
-      "locationName": "Algo bonito que encontré",
-      "x": "342",
-      "y": "",
-      "z": "16",
-      "dimension": "overworld",
-      "structure": "none",
-      "id": "b370"
-    },
-    {
-      "id": "37a7",
-      "locationName": "My house!",
-      "x": "12",
-      "y": "~",
-      "z": "543",
-      "dimension": "overworld",
-      "structure": "none",
-      "notes": [
-        "This is my house",
-        "I like it"
-      ]
-    },
-    {
-      "id": "404a",
-      "locationName": "Mira como anda esto wachoooo",
-      "x": "134",
-      "y": "~",
-      "z": "231",
-      "dimension": "nether",
-      "structure": "monument",
-      "notes": [
-        "This is my house",
-        "I like it"
-      ]
-    },
-    {
-      "id": "9fa7",
-      "locationName": "This one has a structure",
-      "x": "132",
-      "y": "~",
-      "z": "54",
-      "dimension": "overworld",
-      "structure": "monument",
-      "notes": [
-        "This is my house",
-        "I like it"
-      ]
-    },
-    {
-      "id": "4aa9",
-      "locationName": "ESTO ESTA EDITAAADOOOO pero no, seguro crea uno nuevo",
-      "x": "197",
-      "y": "~",
-      "z": "-583",
-      "dimension": "nether",
-      "structure": "none",
-      "notes": [
-        "Ahora no se tiene que romper"
+        "add bite"
       ]
     }
   ]

@@ -7,7 +7,7 @@ import {
   Button,
 } from "@mui/material";
 import { Form, useParams } from "react-router-dom";
-import { Transition } from "../../../../components/Transition/Transition";
+import { Transition } from "../../../../../../components";
 
 interface Props {
   open: boolean;
@@ -26,11 +26,13 @@ function ConfirmDeletion({ open, currentNote, handleClose }: Props) {
       aria-describedby="alert-dialog-delete-note"
     >
       <DialogTitle>{"Are you sure?"}</DialogTitle>
+
       <DialogContent>
         <DialogContentText id="alert-dialog-slide-description">
           This will delete the note permanently. Are you sure?
         </DialogContentText>
       </DialogContent>
+
       <DialogActions>
         <Button onClick={handleClose}>Cancel</Button>
         <Form

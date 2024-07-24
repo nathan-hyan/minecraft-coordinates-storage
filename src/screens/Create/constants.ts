@@ -8,6 +8,11 @@ export interface Inputs {
   z: number;
 }
 
+export const getFormProps = (editMode?: boolean, locationId?: string) =>
+  editMode
+    ? { method: "put" as const, action: `/edit/${locationId}` }
+    : { method: "post" as const, action: "/create" };
+
 export const AVAILABLE_DIMENSIONS = [
   {
     value: "overworld",

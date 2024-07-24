@@ -1,2 +1,1 @@
-export { default as ConfirmDeletion } from "./ConfirmDeletion/ConfirmDeletion";
-export { default as AddNote } from "./AddNote/AddNote";
+export { default as NotesContainer } from "./NotesContainer/NotesContainer";

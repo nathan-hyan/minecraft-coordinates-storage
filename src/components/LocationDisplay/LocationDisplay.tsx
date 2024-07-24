@@ -32,7 +32,10 @@ function LocationDisplay({
 
   return (
     <Grid item xs={12} sm={6} md={4} lg={3}>
-      <Card sx={{ width: "100%" }} onClick={() => push(`/details/${id}`)}>
+      <Card
+        sx={{ width: "100%", cursor: "pointer" }}
+        onClick={() => push(`/details/${id}`)}
+      >
         <CardMedia
           sx={{ height: 140 }}
           image={dimensionCoverImageMap[dimension]}
