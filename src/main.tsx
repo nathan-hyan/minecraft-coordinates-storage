@@ -12,14 +12,13 @@ import "@fontsource/roboto/700.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { Landing, Create, Details } from "@screens";
 import {
-  addNote,
   deleteLocation,
-  deleteNote,
   editLocation,
   getLocation,
   getSingleLocation,
   saveLocation,
 } from "@services/locations";
+import { addNote, deleteNote } from "@services/notes";
 import { Main } from "@layouts";
 
 const darkTheme = createTheme({
