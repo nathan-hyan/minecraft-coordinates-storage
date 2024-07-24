@@ -1,5 +1,5 @@
 import { redirect } from "react-router-dom";
-import { LoaderType } from "../globals/types";
+import { LoaderType } from "@globals/types";
 
 export const getLocation = async () => {
   return await fetch("http://localhost:3000/locations").then((res) =>

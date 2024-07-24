@@ -17,7 +17,7 @@ import {
   structureMap,
 } from "./utils";
 import { useNavigate } from "react-router-dom";
-import { LoaderType } from "../../globals/types";
+import { LoaderType } from "@globals/types";
 
 function LocationDisplay({
   id,

@@ -8,7 +8,7 @@ import {
   Input,
 } from "@mui/material";
 import { Form, useParams } from "react-router-dom";
-import { Transition } from "../../../../../../components";
+import { Transition } from "@components";
 
 interface Props {
   open: boolean;

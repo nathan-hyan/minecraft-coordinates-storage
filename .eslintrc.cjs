@@ -14,5 +14,22 @@ module.exports = {
       "warn",
       { allowConstantExport: true },
     ],
+    "import/extensions": [
+      "error",
+      "never",
+      {
+        js: "never",
+        svg: "always",
+        scss: "always",
+        png: "always",
+        css: "always",
+        json: "always",
+      },
+    ],
+  },
+  settings: {
+    "import/resolver": {
+      typescript: {},
+    },
   },
 };

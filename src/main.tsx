@@ -10,8 +10,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import Main from "./layouts/Main/Main";
-import { Landing, Create, Details } from "./screens";
+import { Landing, Create, Details } from "@screens";
 import {
   addNote,
   deleteLocation,
@@ -20,7 +19,8 @@ import {
   getLocation,
   getSingleLocation,
   saveLocation,
-} from "./services/locations";
+} from "@services/locations";
+import { Main } from "@layouts";
 
 const darkTheme = createTheme({
   palette: {

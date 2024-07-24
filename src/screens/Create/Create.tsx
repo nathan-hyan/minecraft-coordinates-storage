@@ -12,11 +12,10 @@ import {
   AVAILABLE_STRUCTURES,
   getFormProps,
 } from "./constants";
-import Input from "../../components/Input/Input";
-import { ToggleInput } from "../../components";
+import { ToggleInput, Input } from "@components";
 import { Form, useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
-import { LoaderType } from "../../globals/types";
+import { LoaderType } from "@globals/types";
 
 function Create({ editMode }: { editMode?: boolean }) {
   const [disableY, setDisableY] = useState(false);

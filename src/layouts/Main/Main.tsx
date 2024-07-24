@@ -1,6 +1,6 @@
 import { Box, Container } from "@mui/material";
 import { Outlet } from "react-router-dom";
-import { NavigationBar } from "../../components";
+import { NavigationBar } from "@components";
 
 function Main() {
   return (

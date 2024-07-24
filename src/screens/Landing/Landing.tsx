@@ -1,7 +1,7 @@
 import { Grid, Typography } from "@mui/material";
-import { LocationDisplay } from "../../components";
+import { LocationDisplay } from "@components";
 import { useLoaderData } from "react-router-dom";
-import { LoaderType } from "../../globals/types";
+import { LoaderType } from "@globals/types";
 
 function Landing() {
   const data = useLoaderData() as LoaderType[];

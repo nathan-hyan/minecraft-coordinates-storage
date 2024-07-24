@@ -2,7 +2,7 @@ import { Delete, Edit, PlusOneRounded } from "@mui/icons-material";
 import { AppBar, Button, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import DeleteLocationModal from "./components/DeleteLocationModal/DeleteLocationModal";
+import { DeleteLocationModal } from "./components";
 
 function NavigationBar() {
   const push = useNavigate();

@@ -1,10 +1,10 @@
 import { useLoaderData } from "react-router-dom";
-import { LoaderType } from "../../globals/types";
+import { LoaderType } from "@globals/types";
 import { Chip, Grid, Typography } from "@mui/material";
 import {
   dimensionCoverImageMap,
   structureMap,
-} from "../../components/LocationDisplay/utils";
+} from "@components/LocationDisplay/utils";
 
 import { NotesContainer } from "./components";
 
